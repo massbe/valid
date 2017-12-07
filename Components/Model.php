@@ -13,7 +13,6 @@ class Model
         }  else {
                 $determRules = explode("|", $rules);
                 foreach ($determRules as $item) {
-                    //$determDataRules = explode(":", $item);
                     if(stristr($item, ':', true)){
                         $rule = stristr($item, ':', true);
                         $length = substr(strstr($item, ':'), 1, strlen($item));

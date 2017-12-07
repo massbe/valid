@@ -11,15 +11,19 @@ class ValidatorFactory
         switch ($role) {
             case 'int': {
                $validator = new ValidInt();
-            } break;
+               break;
+            }
             case 'strlen': {
                 $validator = new ValidStrlen($length);
-            } break;
+                break;
+            }
             case 'required': {
                 $validator = new ValidRequired();
-            } break;
+                break;
+            }
             default: {
                 return false;
+                break;
             }
         }
 

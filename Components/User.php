@@ -11,7 +11,7 @@ class User
 
     private $rules = [
         'age' => 'int',
-        'name' => 'strlen:9|required'
+        'name' => 'strlen:8|required'
     ];
 
     public function __construct($name, $age)
@@ -45,13 +45,13 @@ class User
         
         foreach ($this->rules as $key => $item) {
            $valid = new Model();
-            $result[] = $valid->validate($this->$key, $item);
+           $result[] = $valid->validate($this->$key, $item);
         }
 
         if (in_array("", $result)){
-            echo "not valid";
+            return false;
         } else {
-            echo "valid";
+            return true;
         }
      }
 }
